@@ -41,14 +41,28 @@ public class ResponseApi {
 
         public ResponseApiBuilder withData(Object data) {
             HashMap<String,Object> hashMap = new HashMap<>();
-            hashMap.put("data: ", data);
+            hashMap.put("data", data);
+            this.data = hashMap;
+            return this;
+        }
+
+        public ResponseApiBuilder withConsentForm(Object data) {
+            HashMap<String,Object> hashMap = new HashMap<>();
+            hashMap.put("consentForm", data);
             this.data = hashMap;
             return this;
         }
 
         public ResponseApiBuilder withAuthorCode(Object data) {
             HashMap<String,Object> hashMap = new HashMap<>();
-            hashMap.put("code: ", data);
+            hashMap.put("code", data);
+            this.data = hashMap;
+            return this;
+        }
+
+        public ResponseApiBuilder withToken(Object data) {
+            HashMap<String,Object> hashMap = new HashMap<>();
+            hashMap.put("token", data);
             this.data = hashMap;
             return this;
         }

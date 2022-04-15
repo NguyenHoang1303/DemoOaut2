@@ -22,15 +22,13 @@ public class AuthorCode {
     private String clientId;
     private String authorizationCode;
     private String scope;
-    private String username;
     private LocalDateTime expires_in;
     private LocalDateTime createdAt;
 
-    public AuthorCode(String clientId, String authorizationCode, String scope, String username) {
+    public AuthorCode(String clientId, String authorizationCode, String scope) {
         this.clientId = clientId;
         this.authorizationCode = authorizationCode;
         this.scope = scope;
-        this.username = username;
         this.expires_in = LocalDateTime.now();
         this.createdAt = LocalDateTime.now();
     }

@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AuthorCodeRepository extends JpaRepository<AuthorCode,Long> {
     AuthorCode findAuthorCodeByClientId(String clientId);
+    AuthorCode findAuthorCodeByAuthorizationCode(String code);
 }

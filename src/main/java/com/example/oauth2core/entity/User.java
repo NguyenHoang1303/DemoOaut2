@@ -1,6 +1,7 @@
 package com.example.oauth2core.entity;
 
-import com.example.oauth2core.dto.FormUser;
+import com.example.oauth2core.dto.ConsentForm;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,14 +34,13 @@ public class User {
     @Column(name = "status")
     private int status;
 
-    @OneToMany(mappedBy="user")
+    @JsonIgnore
+    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
     private Set<ClientApp> clientApps;
 
-    public User(FormUser formUser) {
-        this.status = 1;
-        this.username = formUser.getUsername();
-        this.password = formUser.getPassword();
-        this.scope = "api/v1/articles.read,api/v1/articles.update,api/v1/articles.delete,api/v1/articles.create";
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
 }

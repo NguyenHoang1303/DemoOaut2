@@ -13,21 +13,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table
-public class ClientApp {
+public class Scope {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-    private String clientId;
-    private String secretId;
-    private String logo;
-    private String rootUrl;
-
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="user_id", nullable=false)
-    private User user;
-
-
+    private String description;
 }
